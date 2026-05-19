@@ -1,4 +1,7 @@
 package com.empresa.motoboy.repository;
 
-public interface LojaRepository {
+import com.empresa.motoboy.model.Loja;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LojaRepository extends JpaRepository<Loja, Long> {
 }
