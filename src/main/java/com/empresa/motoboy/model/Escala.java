@@ -21,6 +21,10 @@ public class Escala {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusEscala status;
+
     @NotNull
     @ManyToOne
     @JoinColumn(name = "motoboy_id", nullable = false)
@@ -58,6 +62,10 @@ public class Escala {
 
         this.dataCriacao = LocalDateTime.now();
 
+        if (this.status == null) {
+            this.status = StatusEscala.CONFIRMADA;
+
         }
     }
+}
 
