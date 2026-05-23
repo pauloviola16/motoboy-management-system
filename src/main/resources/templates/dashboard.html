@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard Escalas</title>
+
+</head>
+
+<body>
+
+<h1>Dashboard de Escalas</h1>
+
+<div th:each="loja : ${lojas}">
+
+    <hr>
+
+    <h2 th:text="${loja.nomeLoja}"></h2>
+
+    <div th:if="${#lists.isEmpty(loja.escalas)}">
+
+        <p>Nenhuma escala cadastrada.</p>
+
+    </div>
+
+    <div th:each="escala : ${loja.escalas}">
+
+        <p>
+
+            <strong th:text="${escala.nomeMotoboy}"></strong>
+
+            -
+
+            <span th:text="${escala.horarioInicio}"></span>
+
+            até
+
+            <span th:text="${escala.horarioFim}"></span>
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
