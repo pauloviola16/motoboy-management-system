@@ -1,9 +1,13 @@
 package com.empresa.motoboy.service;
 
+import com.empresa.motoboy.dto.MotoboyRequestDTO;
+import com.empresa.motoboy.dto.MotoboyResponseDTO;
 import com.empresa.motoboy.model.Motoboy;
 import com.empresa.motoboy.repository.MotoboyRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -13,8 +17,22 @@ public class MotoboyService {
 
     private final MotoboyRepository motoboyRepository;
 
-    public Motoboy criar(Motoboy motoboy) {
-        return motoboyRepository.save(motoboy);
+    public MotoboyResponseDTO criar(@Valid @RequestBody MotoboyRequestDTO dto) {
+
+        Motoboy motoboy = new Motoboy();
+
+        motoboy.setNome(dto.getNome());
+        motoboy.setTelefone(dto.getTelefone());
+
+        Motoboy motoboySalvo = motoboyRepository.save(motoboy);
+
+        return new MotoboyResponseDTO(
+                motoboySalvo.getId(),
+                motoboySalvo.getNome(),
+                motoboySalvo.getTelefone(),
+                motoboySalvo.getStatus(),
+                motoboySalvo.getDataCadastro()
+        );
     }
 
     public List<Motoboy> listar() {

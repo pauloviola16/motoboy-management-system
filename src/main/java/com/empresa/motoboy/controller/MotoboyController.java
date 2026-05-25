@@ -1,5 +1,7 @@
 package com.empresa.motoboy.controller;
 
+import com.empresa.motoboy.dto.MotoboyRequestDTO;
+import com.empresa.motoboy.dto.MotoboyResponseDTO;
 import com.empresa.motoboy.model.Motoboy;
 import com.empresa.motoboy.service.MotoboyService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,8 +20,8 @@ public class MotoboyController {
 
     @PostMapping
     @Operation(summary = "Criar um novo motoboy")
-    public Motoboy criar(@RequestBody @Valid Motoboy motoboy) {
-        return motoboyService.criar(motoboy);
+    public MotoboyResponseDTO criar(@RequestBody @Valid MotoboyRequestDTO dto) {
+        return motoboyService.criar(dto);
     }
 
     @GetMapping
