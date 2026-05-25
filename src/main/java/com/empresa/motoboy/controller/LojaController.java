@@ -1,5 +1,7 @@
 package com.empresa.motoboy.controller;
 
+import com.empresa.motoboy.dto.LojaRequestDTO;
+import com.empresa.motoboy.dto.LojaResponseDTO;
 import com.empresa.motoboy.model.Loja;
 import com.empresa.motoboy.service.LojaService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,8 +20,8 @@ public class LojaController {
 
     @PostMapping
     @Operation(summary = "Criar uma loja")
-    public Loja criar(@RequestBody @Valid Loja loja) {
-        return lojaService.criar(loja);
+    public LojaResponseDTO criar(@RequestBody @Valid LojaRequestDTO dto) {
+        return lojaService.criar(dto);
     }
 
     @GetMapping
