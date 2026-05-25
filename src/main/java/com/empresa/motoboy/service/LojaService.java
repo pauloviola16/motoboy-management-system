@@ -32,7 +32,7 @@ public class LojaService {
 
         loja.setNome(lojaAtualizada.getNome());
         loja.setEndereco(lojaAtualizada.getEndereco());
-        loja.setTelefone(lojaAtualizada.getTelefone());
+        loja.setValorDiaria(lojaAtualizada.getValorDiaria());
 
         return lojaRepository.save(loja);
     }

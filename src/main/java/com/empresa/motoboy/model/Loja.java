@@ -3,8 +3,11 @@ package com.empresa.motoboy.model;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
+
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "lojas")
@@ -32,8 +35,8 @@ public class Loja {
     @Schema(description = "Endereço da loja", example = "Av. Atlântica, 500")
     private String endereco;
 
-    @NotBlank
-    @Column(nullable = false, unique = true, length = 20)
-    @Schema(description = "Telefone da loja", example = "(21) 99999-9999")
-    private String telefone;
+    @NotNull
+    @Column(nullable = false, precision = 10, scale = 2)
+    @Schema(description = "Valor da diária paga ao motoboy", example = "70.00")
+    private BigDecimal valorDiaria;
 }
