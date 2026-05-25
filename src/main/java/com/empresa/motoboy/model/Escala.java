@@ -59,15 +59,6 @@ public class Escala {
     @Schema(description = "Horário de fim", example = "18:00")
     private LocalTime horarioFim;
 
-    @Column(length = 255)
-    @Schema(description = "Observações da escala", example = "Motoboy fixo da loja")
-    private String observacao;
-
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    @Schema(description = "Usuário que criou a escala")
-    private Usuario criadoPor;
-
     @Column(nullable = false, updatable = false)
     @Schema(description = "Data de criação da escala")
     private LocalDateTime dataCriacao;
