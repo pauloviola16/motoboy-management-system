@@ -189,18 +189,6 @@ Este projeto está sendo desenvolvido com o objetivo de praticar:
 
 ---
 
-## 🚧 Funcionalidades Futuras
-
-- Dashboard administrativo
-- Controle de autenticação e autorização
-- Histórico de escalas
-- Relatórios operacionais
-- Integração frontend
-- Deploy em nuvem
-- Testes automatizados
-
----
-
 ## 📌 Status do Projeto
 
 🚧 Projeto em desenvolvimento ativo.
