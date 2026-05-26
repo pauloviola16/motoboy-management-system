@@ -1,5 +1,8 @@
 package com.empresa.motoboy.controller;
 
+import com.empresa.motoboy.dto.EscalaFormDTO;
+import com.empresa.motoboy.repository.LojaRepository;
+import com.empresa.motoboy.repository.MotoboyRepository;
 import com.empresa.motoboy.service.EscalaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -13,6 +16,8 @@ import java.time.LocalDate;
 public class DashboardController {
 
     private final EscalaService escalaService;
+    private final MotoboyRepository motoboyRepository;
+    private final LojaRepository lojaRepository;
 
     @GetMapping("/")
     public String dashboard(Model model) {
@@ -23,5 +28,26 @@ public class DashboardController {
         );
 
         return "dashboard";
+    }
+
+    @GetMapping("/escalas/nova")
+    public String novaEscala(Model model) {
+
+        model.addAttribute(
+                "motoboys",
+                motoboyRepository.findAll()
+        );
+
+        model.addAttribute(
+                "lojas",
+                lojaRepository.findAll()
+        );
+
+        model.addAttribute(
+                "escala",
+                new EscalaFormDTO()
+        );
+
+        return "nova-escala";
     }
 }
