@@ -29,6 +29,7 @@ public class EscalaController {
         return escalaService.criar(dto);
     }
 
+
     @PatchMapping("/{id}/cancelar")
     @Operation(summary = "Cancelar escala")
     public void cancelar(@PathVariable Long id) {
