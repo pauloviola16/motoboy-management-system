@@ -79,6 +79,10 @@
                                 th:text="${escala.nomeMotoboy}">
                         </h5>
 
+                        <span class="badge bg-success"
+                              th:text="${escala.status}">
+                       </span>
+
                         <p class="mb-0 text-muted">
 
                             <span th:text="${escala.horarioInicio}"></span>
@@ -91,11 +95,17 @@
 
                     </div>
 
-                    <button class="btn btn-danger btn-sm">
+                    <form th:action="@{'/escalas/' + ${escala.escalaId} + '/cancelar'}"
+                          method="post">
 
-                        Cancelar
+                        <button type="submit"
+                                class="btn btn-danger btn-sm">
 
-                    </button>
+                            Cancelar
+
+                        </button>
+
+                    </form>
 
                 </div>
 
