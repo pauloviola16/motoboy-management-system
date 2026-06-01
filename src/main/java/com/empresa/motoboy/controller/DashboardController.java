@@ -53,7 +53,7 @@ public class DashboardController {
         return "nova-escala";
     }
 
-    @PostMapping("/escalas")
+    @PostMapping("/escalas/nova")
     public String criarEscalaFrontend(
             @ModelAttribute EscalaRequestDTO dto
     ) {
