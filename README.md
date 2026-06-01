@@ -1,20 +1,23 @@
 # Motoboy Management System 🛵
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+
+![Status](https://img.shields.io/badge/Status-Versão%201.0-brightgreen)
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-Framework-brightgreen)
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 ![Swagger](https://img.shields.io/badge/Swagger-UI-85EA2D?logo=swagger&logoColor=black)
 
-Sistema backend desenvolvido com **Java e Spring Boot** para gerenciamento e automatização de escalas de motoboys.  
+## 📌 Sobre o Projeto
 
-O projeto está sendo desenvolvido com foco em organização operacional, controle de escalas, gestão de lojas e automatização de processos logísticos.
+Sistema web desenvolvido com **Java e Spring Boot** para gerenciamento de escalas de motoboys.
 
-> ⚠️ Projeto em desenvolvimento — novas funcionalidades e melhorias estão sendo implementadas continuamente.
+O projeto foi idealizado a partir de desafios observados em operações logísticas reais, buscando centralizar o controle de escalas, organizar a distribuição de entregadores entre lojas e facilitar a visualização operacional diária.
+
+Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e Bootstrap**, permitindo o gerenciamento das escalas de forma simples e intuitiva.
 
 ---
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias Utilizadas
 
 - Java 17
 - Spring Boot
@@ -22,142 +25,81 @@ O projeto está sendo desenvolvido com foco em organização operacional, contro
 - Spring Data JPA
 - Hibernate
 - MySQL
+- Thymeleaf
+- Bootstrap
 - Maven
 - Swagger/OpenAPI
 - Lombok
+- Git e GitHub
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🧩 Funcionalidades
 
-```bash
-src/main/java/com/empresa/motoboy
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-├── exception
-└── config
-```
+### Gestão de Escalas
+- Cadastro de escalas
+- Cancelamento de escalas
+- Exclusão de escalas
+- Controle de horários de trabalho
+- Associação entre motoboys e lojas
 
-A aplicação segue uma **arquitetura em camadas**, separando responsabilidades entre regras de negócio, acesso a dados e exposição da API.
+### Dashboard Operacional
+- Visualização de escalas por data
+- Agrupamento das escalas por loja
+- Consulta rápida da operação diária
 
----
-
-## 📚 Funcionalidades Implementadas
-
-### 🔹 Gestão de Motoboys
-- Cadastro de motoboys
-- Listagem de motoboys
-- Busca por ID
-- Atualização de dados
-- Remoção de motoboys
-
-### 🔹 Gestão de Lojas
-- Cadastro de lojas
-- Controle de informações operacionais
-- Associação com escalas
-
-### 🔹 Gestão de Escalas
-- Criação de escalas
-- Associação entre motoboy e loja
-- Controle de horários
-- Controle de status das escalas
-- Registro de observações operacionais
+### API REST
+- CRUD de Motoboys
+- CRUD de Lojas
+- CRUD de Escalas
+- Documentação automática com Swagger
 
 ---
 
-## 🔗 Endpoints da API
+## 📋 Regras de Negócio
 
-### 🛵 Motoboys
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| POST | /motoboys | Criar motoboy |
-| GET | /motoboys | Listar motoboys |
-| GET | /motoboys/{id} | Buscar motoboy por ID |
-| PUT | /motoboys/{id} | Atualizar motoboy |
-| DELETE | /motoboys/{id} | Remover motoboy |
+- Uma loja pode possuir várias escalas.
+- Um motoboy pode possuir várias escalas.
+- Cada escala pertence a uma loja e a um motoboy.
+- Escalas são organizadas por data.
+- Escalas podem ser canceladas durante a operação.
 
 ---
 
-### 🏪 Lojas
+## 🎯 Objetivo
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| POST | /lojas | Criar loja |
-| GET | /lojas | Listar lojas |
-| GET | /lojas/{id} | Buscar loja por ID |
-| PUT | /lojas/{id} | Atualizar loja |
-| DELETE | /lojas/{id} | Remover loja |
+Este projeto foi desenvolvido para consolidar conhecimentos em:
 
----
-
-### 📅 Escalas
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| POST | /escalas | Criar escala |
-| GET | /escalas | Listar escalas |
-| GET | /escalas/{id} | Buscar escala por ID |
-| PUT | /escalas/{id} | Atualizar escala |
-| DELETE | /escalas/{id} | Remover escala |
+- Desenvolvimento Backend com Java
+- Spring Boot
+- APIs REST
+- JPA/Hibernate
+- Banco de Dados Relacional
+- Arquitetura em Camadas
+- Modelagem de Entidades e Relacionamentos
+- Desenvolvimento de soluções para problemas reais de negócio
 
 ---
 
-## 🧩 Modelagem do Sistema
+## 📖 Documentação da API
 
-O sistema possui relacionamento entre entidades utilizando banco de dados relacional:
-
-- Uma loja pode possuir várias escalas
-- Um motoboy pode possuir várias escalas
-- Cada escala pertence a uma loja e a um motoboy
-
----
-
-## 📄 Documentação
-
-A API conta com documentação interativa utilizando **Swagger/OpenAPI**.
-
-Com o projeto rodando localmente, acesse:
+Com a aplicação em execução:
 
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
 
-Pela interface é possível visualizar os endpoints disponíveis e testar as requisições diretamente pelo navegador.
-
 ---
 
-## 📥 Exemplo de Requisição
+## ▶️ Executando o Projeto
 
-### Criar Escala
-
-```json
-{
-  "motoboyId": 1,
-  "lojaId": 2,
-  "data": "2026-05-26",
-  "horarioInicio": "18:00:00",
-  "horarioFim": "23:59:00",
-  "observacao": "Escala de fechamento"
-}
-```
-
----
-
-## ▶️ Como rodar o projeto
-
-### 🔹 Pré-requisitos
+### Pré-requisitos
 
 - Java 17+
 - Maven
 - MySQL
 
----
-
-### 🔹 Executando localmente
+### Execução
 
 ```bash
 git clone https://github.com/seuusuario/motoboy-management-system.git
@@ -167,7 +109,7 @@ cd motoboy-management-system
 ./mvnw spring-boot:run
 ```
 
-A aplicação estará disponível em:
+Aplicação disponível em:
 
 ```bash
 http://localhost:8080
@@ -175,21 +117,29 @@ http://localhost:8080
 
 ---
 
-## 🎯 Objetivo do Projeto
+## 📸 Demonstração
 
-Este projeto está sendo desenvolvido com o objetivo de praticar:
+Adicione aqui capturas de tela ou GIFs mostrando:
 
-- Desenvolvimento backend com Java e Spring Boot
-- Criação de APIs REST
-- Arquitetura em camadas
-- Modelagem de banco de dados relacional
-- Relacionamentos entre entidades com JPA/Hibernate
-- Regras de negócio aplicadas a problemas reais
-- Documentação de APIs com Swagger/OpenAPI
+- Dashboard de escalas
+- Cadastro de escala
+- Cancelamento de escala
+- Organização das escalas por loja
 
 ---
 
-## 📌 Status do Projeto
+## 📌 Status
 
-🚧 Projeto em desenvolvimento ativo.
-Novas funcionalidades estão sendo adicionadas continuamente conforme evolução do sistema.
+✅ Versão 1.0 funcional
+
+### Próximas melhorias
+
+- Cadastro administrativo de lojas
+- Cadastro administrativo de motoboys
+- Relatórios operacionais
+- Autenticação e controle de acesso
+- Melhorias na experiência do usuário
+
+---
+
+Desenvolvido como projeto de estudo e portfólio para aprofundamento em Java, Spring Boot e desenvolvimento de sistemas voltados para operações logísticas.
