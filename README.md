@@ -136,4 +136,4 @@ http://localhost:8080
 
 ---
 
-Desenvolvido como projeto de estudo e portfólio para aprofundamento em Java, Spring Boot e desenvolvimento de sistemas voltados para operações logísticas.
+Sistema desenvolvido para apoiar a gestão operacional de escalas em operações de entrega, centralizando informações de lojas, motoboys e jornadas de trabalho.
