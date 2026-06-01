@@ -119,14 +119,8 @@ http://localhost:8080
 
 ## 📸 Demonstração
 
-Adicione aqui capturas de tela ou GIFs mostrando:
 
-- Dashboard de escalas
-- Cadastro de escala
-- Cancelamento de escala
-- Organização das escalas por loja
 
----
 
 ## 📌 Status
 
