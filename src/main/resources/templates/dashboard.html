@@ -28,11 +28,41 @@
         <a
                 href="/escalas/nova"
                 class="btn btn-primary">
+
             + Nova Escala
 
         </a>
 
     </div>
+
+    <form
+            method="get"
+            action="/"
+            class="row g-2 mb-4">
+
+        <div class="col-auto">
+
+            <input
+                    type="date"
+                    name="data"
+                    class="form-control"
+                    th:value="${dataSelecionada}">
+
+        </div>
+
+        <div class="col-auto">
+
+            <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                Filtrar
+
+            </button>
+
+        </div>
+
+    </form>
 
     <div
             th:each="loja : ${lojas}"
@@ -42,23 +72,30 @@
 
             <div class="d-flex justify-content-between align-items-center mb-3">
 
-                <h3
-                        class="card-title mb-0"
-                        th:text="${loja.nomeLoja}">
-                </h3>
+                <div>
 
-                <span class="badge bg-secondary">
+                    <h3
+                            class="card-title mb-0"
+                            th:text="${loja.nomeLoja}">
+                    </h3>
 
-                    <span th:text="${#lists.size(loja.escalas)}"></span>
+                </div>
 
-                    escalas
+                <div class="d-flex gap-2">
 
-                </span>
+                    <a
+                            th:href="@{'/escalas/nova?lojaId=' + ${loja.lojaId} + '&data=' + ${dataSelecionada}}"
+                            class="btn btn-primary btn-sm">
+
+                        + Escala
+
+                    </a>
+
+                </div>
 
             </div>
 
-            <div
-                    th:if="${#lists.isEmpty(loja.escalas)}">
+            <div th:if="${#lists.isEmpty(loja.escalas)}">
 
                 <p class="text-muted mb-0">
                     Nenhuma escala cadastrada.
@@ -79,11 +116,13 @@
                                 th:text="${escala.nomeMotoboy}">
                         </h5>
 
-                        <span class="badge bg-success"
-                              th:text="${escala.status}">
-                       </span>
+                        <span
+                                class="badge"
+                                th:classappend="${escala.status.name() == 'CANCELADA'} ? ' bg-danger' : ' bg-success'"
+                                th:text="${escala.status}">
+                        </span>
 
-                        <p class="mb-0 text-muted">
+                        <p class="mb-0 text-muted mt-2">
 
                             <span th:text="${escala.horarioInicio}"></span>
 
@@ -95,17 +134,39 @@
 
                     </div>
 
-                    <form th:action="@{'/escalas/' + ${escala.escalaId} + '/cancelar'}"
-                          method="post">
+                    <div class="d-flex gap-2">
 
-                        <button type="submit"
-                                class="btn btn-danger btn-sm">
+                        <form
+                                th:if="${escala.status.name() != 'CANCELADA'}"
+                                th:action="@{'/escalas/' + ${escala.escalaId} + '/cancelar'}"
+                                method="post">
 
-                            Cancelar
+                            <button
+                                    type="submit"
+                                    class="btn btn-danger btn-sm">
 
-                        </button>
+                                Cancelar
 
-                    </form>
+                            </button>
+
+                        </form>
+
+                        <form
+                                th:action="@{'/escalas/' + ${escala.escalaId} + '/excluir'}"
+                                method="post">
+
+                            <button
+                                    type="submit"
+                                    class="btn btn-outline-secondary btn-sm"
+                                    onclick="return confirm('Deseja realmente excluir esta escala?')">
+
+                                🗑️
+
+                            </button>
+
+                        </form>
+
+                    </div>
 
                 </div>
 

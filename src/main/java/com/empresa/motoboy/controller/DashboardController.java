@@ -7,10 +7,7 @@ import com.empresa.motoboy.service.EscalaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -23,18 +20,44 @@ public class DashboardController {
     private final LojaRepository lojaRepository;
 
     @GetMapping("/")
-    public String dashboard(Model model) {
+    public String dashboard(
+            @RequestParam(required = false) LocalDate data,
+            Model model
+    ) {
+
+        if (data == null) {
+            data = LocalDate.now();
+        }
+
+        model.addAttribute(
+                "dataSelecionada",
+                data
+        );
 
         model.addAttribute(
                 "lojas",
-                escalaService.buscarDashboard(LocalDate.now())
+                escalaService.buscarDashboard(data)
         );
 
         return "dashboard";
     }
 
     @GetMapping("/escalas/nova")
-    public String novaEscala(Model model) {
+    public String novaEscala(
+            @RequestParam(required = false) Long lojaId,
+            @RequestParam(required = false) LocalDate data,
+            Model model
+    ) {
+
+        EscalaRequestDTO dto = new EscalaRequestDTO();
+
+        if (lojaId != null) {
+            dto.setLojaId(lojaId);
+        }
+
+        if (data != null) {
+            dto.setData(data);
+        }
 
         model.addAttribute(
                 "motoboys",
@@ -42,13 +65,8 @@ public class DashboardController {
         );
 
         model.addAttribute(
-                "lojas",
-                lojaRepository.findAll()
-        );
-
-        model.addAttribute(
                 "escala",
-                new EscalaRequestDTO()
+                dto
         );
 
         return "nova-escala";
@@ -70,6 +88,14 @@ public class DashboardController {
     ) {
 
         escalaService.cancelarEscala(id);
+
+        return "redirect:/";
+    }
+
+    @PostMapping("/escalas/{id}/excluir")
+    public String excluirEscala(@PathVariable Long id) {
+
+        escalaService.excluirEscala(id);
 
         return "redirect:/";
     }

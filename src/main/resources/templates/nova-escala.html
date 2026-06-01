@@ -30,6 +30,8 @@
                     th:object="${escala}"
                     method="post">
 
+                <input type="hidden" th:field="*{lojaId}">
+                <input type="hidden" th:field="*{data}">
                 <div class="mb-3">
 
                     <label class="form-label">
@@ -51,43 +53,6 @@
                         </option>
 
                     </select>
-
-                </div>
-
-                <div class="mb-3">
-
-                    <label class="form-label">
-                        Loja
-                    </label>
-
-                    <select
-                            th:field="*{lojaId}"
-                            class="form-select">
-
-                        <option value="">
-                            Selecione
-                        </option>
-
-                        <option
-                                th:each="loja : ${lojas}"
-                                th:value="${loja.id}"
-                                th:text="${loja.nome}">
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <div class="mb-3">
-
-                    <label class="form-label">
-                        Data
-                    </label>
-
-                    <input
-                            type="date"
-                            th:field="*{data}"
-                            class="form-control">
 
                 </div>
 

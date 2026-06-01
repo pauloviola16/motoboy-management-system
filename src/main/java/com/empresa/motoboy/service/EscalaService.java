@@ -103,4 +103,15 @@ public class EscalaService {
 
         return dashboard;
     }
+
+    public void excluirEscala(Long id) {
+
+        Escala escala = escalaRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Escala não encontrada"
+                        ));
+
+        escalaRepository.delete(escala);
+    }
 }
