@@ -119,8 +119,13 @@ http://localhost:8080
 
 ## 📸 Demonstração
 
+## Lista de Escalas
 
+<img src="images/DashboardEscalas.png" width="900">
 
+## Nova Escala
+
+<img src="images/NovaEscala.png" width="900">
 
 ## 📌 Status
 
