@@ -119,11 +119,11 @@ http://localhost:8080
 
 ## 📸 Demonstração
 
-<h2>Demonstração do Sistema</h2>
 
 <p align="center">
-  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="48%">
-  <img src="images/NovaEscala.png" alt="Nova Escala" width="48%">
+  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="45%">
+  <img src="images/NovaEscala.png" alt="Nova Escala" width="45
+  %">
 </p>
 
 <p align="center">
