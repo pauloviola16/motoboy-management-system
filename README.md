@@ -119,15 +119,26 @@ http://localhost:8080
 
 ## 📸 Demonstração
 
+<h2>Demonstração do Sistema</h2>
+
+<h3>Lista de Escalas</h3>
 
 <p align="center">
-  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="45%">
-  <img src="images/NovaEscala.png" alt="Nova Escala" width="45
-  %">
+  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="90%">
 </p>
 
 <p align="center">
-  <em>À esquerda: listagem de escalas cadastradas. À direita: formulário para criação de novas escalas.</em>
+  <em>Visualização centralizada das escalas cadastradas, permitindo consulta e gerenciamento dos registros.</em>
+</p>
+
+<h3>Nova Escala</h3>
+
+<p align="center">
+  <img src="images/NovaEscala.png" alt="Nova Escala" width="70%">
+</p>
+
+<p align="center">
+  <em>Formulário para cadastro de novas escalas com seleção de motoboy, data e horário.</em>
 </p>
 
 ## 📌 Status
