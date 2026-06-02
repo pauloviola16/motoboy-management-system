@@ -119,13 +119,16 @@ http://localhost:8080
 
 ## 📸 Demonstração
 
-## Lista de Escalas
+<h2>Demonstração do Sistema</h2>
 
-<img src="images/DashboardEscalas.png" width="900">
+<p align="center">
+  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="48%">
+  <img src="images/NovaEscala.png" alt="Nova Escala" width="48%">
+</p>
 
-## Nova Escala
-
-<img src="images/NovaEscala.png" width="900">
+<p align="center">
+  <em>À esquerda: listagem de escalas cadastradas. À direita: formulário para criação de novas escalas.</em>
+</p>
 
 ## 📌 Status
 
