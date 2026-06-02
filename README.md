@@ -117,9 +117,7 @@ http://localhost:8080
 
 ---
 
-## 📸 Demonstração
-
-<h2>Demonstração do Sistema</h2>
+## 📸 Demonstração do Sistema
 
 <h3>Lista de Escalas</h3>
 
