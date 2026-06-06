@@ -141,15 +141,6 @@ http://localhost:8080
 
 ## 📌 Status
 
-✅ Versão 1.0 funcional
-
-### Próximas melhorias
-
-- Cadastro administrativo de lojas
-- Cadastro administrativo de motoboys
-- Relatórios operacionais
-- Autenticação e controle de acesso
-- Melhorias na experiência do usuário
 
 ---
 
