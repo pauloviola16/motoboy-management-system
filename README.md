@@ -141,6 +141,7 @@ http://localhost:8080
 
 ## 📌 Status
 
+O sistema encontra-se finalizado em sua versão atual e pronto para utilização. Novas funcionalidades e melhorias poderão ser adicionadas futuramente para melhorar e facilitar o uso.
 
 ---
 
