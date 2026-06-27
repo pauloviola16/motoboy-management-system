@@ -51,7 +51,6 @@ public class Usuario implements UserDetails {
     @Schema(description = "Data de cadastro do usuário")
     private LocalDateTime dataCadastro;
 
-    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
