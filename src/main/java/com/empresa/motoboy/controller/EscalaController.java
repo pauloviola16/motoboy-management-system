@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -20,6 +21,7 @@ public class EscalaController {
 
     private final EscalaService escalaService;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     @Operation(summary = "Criar nova escala")
     public Escala criar(
@@ -29,7 +31,7 @@ public class EscalaController {
         return escalaService.criar(dto);
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping("/{id}/cancelar")
     @Operation(summary = "Cancelar escala")
     public void cancelar(@PathVariable Long id) {
@@ -37,6 +39,7 @@ public class EscalaController {
         escalaService.cancelarEscala(id);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @GetMapping("/dashboard")
     @Operation(summary = "Buscar dashboard das lojas")
     public List<LojaDashboardDTO> dashboard(

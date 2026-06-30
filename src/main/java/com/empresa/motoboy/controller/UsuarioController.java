@@ -16,11 +16,6 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @PostMapping
-    public Usuario cadastrar(@RequestBody UsuarioRequestDTO dto) {
-        return usuarioService.cadastrar(dto);
-    }
-
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public List<Usuario> listarTodos() {
