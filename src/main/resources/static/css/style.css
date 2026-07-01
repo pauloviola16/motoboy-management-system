@@ -26,12 +26,11 @@ body{
     padding:40px 48px;
 }
 
-/* ===== SIDEBAR ===== */
+/* ===== SIDEBAR (roxa) ===== */
 
 .sidebar{
     width:250px;
-    background:#ffffff;
-    border-right:1px solid #ece8f7;
+    background:var(--roxo);
     display:flex;
     flex-direction:column;
     padding:24px 16px;
@@ -43,15 +42,15 @@ body{
     gap:12px;
     padding:0 8px 24px 8px;
     margin-bottom:8px;
-    border-bottom:1px solid #ece8f7;
+    border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
 .brand-icon{
     width:38px;
     height:38px;
     border-radius:10px;
-    background:var(--roxo);
-    color:white;
+    background:white;
+    color:var(--roxo);
     font-weight:700;
     font-size:14px;
     display:flex;
@@ -63,13 +62,13 @@ body{
 .brand-title{
     font-weight:700;
     font-size:15px;
-    color:#2d2640;
+    color:white;
     line-height:1.2;
 }
 
 .brand-subtitle{
     font-size:11px;
-    color:#9c93b5;
+    color:rgba(255,255,255,0.65);
     letter-spacing:0.03em;
 }
 
@@ -86,7 +85,7 @@ body{
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:0.05em;
-    color:#a79fc0;
+    color:rgba(255,255,255,0.55);
     padding:16px 12px 6px 12px;
 }
 
@@ -96,7 +95,7 @@ body{
     gap:10px;
     padding:10px 12px;
     border-radius:8px;
-    color:#4b4560;
+    color:rgba(255,255,255,0.85);
     text-decoration:none;
     font-size:14px;
     font-weight:500;
@@ -110,50 +109,50 @@ body{
 .nav-link svg{
     width:18px;
     height:18px;
-    stroke:#9c93b5;
+    stroke:rgba(255,255,255,0.7);
     flex-shrink:0;
 }
 
 .nav-link:hover{
-    background:var(--roxo-claro);
-    color:var(--roxo);
+    background:rgba(255,255,255,0.12);
+    color:white;
 }
 
 .nav-link:hover svg{
-    stroke:var(--roxo);
+    stroke:white;
 }
 
 .nav-link.active{
-    background:var(--roxo);
-    color:white;
+    background:white;
+    color:var(--roxo);
     font-weight:600;
 }
 
 .nav-link.active svg{
-    stroke:white;
+    stroke:var(--roxo);
 }
 
 .sidebar-footer{
-    border-top:1px solid #ece8f7;
+    border-top:1px solid rgba(255,255,255,0.15);
     padding-top:12px;
     margin-top:12px;
 }
 
 .nav-link-logout{
-    color:#a13d47;
+    color:rgba(255,255,255,0.75);
 }
 
 .nav-link-logout svg{
-    stroke:#a13d47;
+    stroke:rgba(255,255,255,0.7);
 }
 
 .nav-link-logout:hover{
-    background:#fbeceb;
-    color:#a13d47;
+    background:rgba(255,255,255,0.12);
+    color:white;
 }
 
 .nav-link-logout:hover svg{
-    stroke:#a13d47;
+    stroke:white;
 }
 
 /* ===== CONTEÚDO ===== */
@@ -218,9 +217,10 @@ h1{
     font-size:20px;
 }
 
+/* Card de escala individual — neutro, sem roxo de fundo */
 .border.rounded.bg-light{
-    background:var(--roxo-claro) !important;
-    border-color:#ded4f5 !important;
+    background:#f8f8fa !important;
+    border-color:#e8e7ee !important;
 }
 
 .badge.bg-success{
