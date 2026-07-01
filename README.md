@@ -85,21 +85,6 @@ O projeto segue arquitetura em camadas para facilitar manutenção, escalabilida
 - DTO
 - Entity
 
-## 🎯 Objetivo
-
-Este projeto foi desenvolvido para consolidar conhecimentos em:
-
-- Desenvolvimento Backend com Java
-- Spring Boot
-- APIs REST
-- JPA/Hibernate
-- Banco de Dados Relacional
-- Arquitetura em Camadas
-- Modelagem de Entidades e Relacionamentos
-- Desenvolvimento de soluções para problemas reais de negócio
-- Segurança de aplicações com Spring Security
-- Controle de autenticação e autorização
-
 ---
 
 ## 📖 Documentação da API
