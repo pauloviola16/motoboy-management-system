@@ -44,30 +44,19 @@ public class SecurityConfig {
                 .formLogin(form -> form
 
                         .loginPage("/login")
-
                         .loginProcessingUrl("/login")
-
-                        .defaultSuccessUrl("/escalas", true)
-
+                        .defaultSuccessUrl("/", true)
                         .failureUrl("/login?error=true")
-
                         .permitAll()
                 )
 
                 .logout(logout -> logout
 
                         .logoutUrl("/logout")
-
                         .logoutSuccessUrl("/login?logout=true")
-
                         .permitAll()
                 )
 
                 .build();
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 }
