@@ -143,9 +143,6 @@ http://localhost:8080
   <em>Visualização centralizada das escalas cadastradas, permitindo consulta e gerenciamento dos registros.</em>
 </p>
 
-<p align="center">
-  <em>Formulário para cadastro de novas escalas com seleção de motoboy, data e horário.</em>
-</p>
 
 ## 📌 Status
 
