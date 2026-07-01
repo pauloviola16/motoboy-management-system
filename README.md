@@ -1,6 +1,6 @@
 # Motoboy Management System 🛵
 
-![Status](https://img.shields.io/badge/Status-Versão%201.0-brightgreen)
+![Status](https://img.shields.io/badge/Status-Versão%201.1-brightgreen)
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-Framework-brightgreen)
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-blue)
@@ -23,6 +23,7 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 - Spring Boot
 - Spring Web
 - Spring Data JPA
+- Spring Security
 - Hibernate
 - MySQL
 - Thymeleaf
@@ -56,6 +57,26 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 
 ---
 
+### Segurança e Controle de Acesso
+
+- Login de usuários
+- Proteção das páginas do sistema
+- Controle de autenticação via Spring Security
+- Criptografia de senhas com BCrypt
+
+## 🔐 Segurança
+
+O sistema possui autenticação utilizando Spring Security.
+
+### Funcionalidades de Segurança
+
+- Tela de login personalizada
+- Proteção de rotas da aplicação
+- Controle de acesso para usuários autenticados
+- Senhas armazenadas de forma criptografada utilizando BCrypt
+- Redirecionamento automático para login ao acessar áreas protegidas
+- Controle de sessão gerenciado pelo Spring Security
+
 ## 📋 Regras de Negócio
 
 - Uma loja pode possuir várias escalas.
@@ -78,6 +99,8 @@ Este projeto foi desenvolvido para consolidar conhecimentos em:
 - Arquitetura em Camadas
 - Modelagem de Entidades e Relacionamentos
 - Desenvolvimento de soluções para problemas reais de negócio
+- Segurança de aplicações com Spring Security
+- Controle de autenticação e autorização
 
 ---
 
