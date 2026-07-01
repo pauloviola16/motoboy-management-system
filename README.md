@@ -57,30 +57,33 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 
 ---
 
-### Segurança e Controle de Acesso
-
-- Login de usuários
-- Proteção das páginas do sistema
-- Controle de autenticação via Spring Security
-- Criptografia de senhas com BCrypt
-
 ## 🔐 Segurança
 
-O sistema possui autenticação utilizando Spring Security.
-
-### Funcionalidades de Segurança
-
+- Autenticação com Spring Security
 - Tela de login personalizada
 - Proteção de rotas da aplicação
-- Controle de acesso para usuários autenticados
-- Senhas armazenadas de forma criptografada utilizando BCrypt
-- Redirecionamento automático para login ao acessar áreas protegidas
-- Controle de sessão gerenciado pelo Spring Security
+- Controle de sessão
+- Criptografia de senhas com BCrypt
+- Redirecionamento automático para autenticação em áreas protegidas
 
-## 📋 Regras de Negócio
+ ## ✅ Boas Práticas Implementadas
 
-O sistema controla a alocação de motoboys em lojas por data e horário, permitindo cadastro, consulta e cancelamento de escalas.
----
+- Arquitetura em camadas (Controller, Service e Repository)
+- DTOs para transferência de dados
+- Bean Validation para validação de entradas
+- Tratamento global de exceções com ControllerAdvice
+- Documentação automática com Swagger/OpenAPI
+- Separação de responsabilidades seguindo boas práticas do Spring Boot
+
+## 🏗️ Arquitetura
+
+O projeto segue arquitetura em camadas para facilitar manutenção, escalabilidade e organização do código.
+
+- Controller
+- Service
+- Repository
+- DTO
+- Entity
 
 ## 🎯 Objetivo
 
@@ -159,7 +162,17 @@ http://localhost:8080
 
 ## 📌 Status
 
-O sistema encontra-se finalizado em sua versão atual e pronto para utilização. Novas funcionalidades e melhorias poderão ser adicionadas futuramente para melhorar e facilitar o uso.
+Versão 1.1 concluída.
+
+Principais funcionalidades implementadas:
+
+- Gestão de escalas
+- API REST
+- Interface Web com Thymeleaf
+- Spring Security
+- Bean Validation
+- Tratamento global de exceções
+- Swagger/OpenAPI
 
 ---
 
