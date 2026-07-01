@@ -127,20 +127,20 @@ http://localhost:8080
 
 ## 📸 Demonstração do Sistema
 
+<h3>Tela de Login</h3>
+
+<p align="center">
+  <img src="images/LoginConecta.png" alt="Nova Escala" width="70%">
+</p>
+
 <h3>Lista de Escalas</h3>
 
 <p align="center">
-  <img src="images/DashboardEscalas.png" alt="Lista de Escalas" width="90%">
+  <img src="images/dashboardATT.png" alt="Lista de Escalas" width="90%">
 </p>
 
 <p align="center">
   <em>Visualização centralizada das escalas cadastradas, permitindo consulta e gerenciamento dos registros.</em>
-</p>
-
-<h3>Nova Escala</h3>
-
-<p align="center">
-  <img src="images/NovaEscala.png" alt="Nova Escala" width="70%">
 </p>
 
 <p align="center">
