@@ -79,12 +79,7 @@ O sistema possui autenticação utilizando Spring Security.
 
 ## 📋 Regras de Negócio
 
-- Uma loja pode possuir várias escalas.
-- Um motoboy pode possuir várias escalas.
-- Cada escala pertence a uma loja e a um motoboy.
-- Escalas são organizadas por data.
-- Escalas podem ser canceladas durante a operação.
-
+O sistema controla a alocação de motoboys em lojas por data e horário, permitindo cadastro, consulta e cancelamento de escalas.
 ---
 
 ## 🎯 Objetivo
