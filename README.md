@@ -79,11 +79,13 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 
 O projeto segue arquitetura em camadas para facilitar manutenção, escalabilidade e organização do código.
 
-- Controller
-- Service
-- Repository
-- DTO
-- Entity
+- controller → Recebe e processa as requisições HTTP
+- service → Regras de negócio da aplicação
+- repository → Acesso aos dados com Spring Data JPA
+- dto → Transferência de dados entre camadas
+- model → Entidades do domínio
+- security → Configurações de autenticação e autorização
+- exception → Tratamento global de exceções
 
 ---
 
