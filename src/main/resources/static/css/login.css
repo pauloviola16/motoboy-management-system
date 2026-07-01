@@ -30,43 +30,64 @@ body{
 
     background:white;
 
-    width:420px;
+    width:480px;
 
-    padding:40px;
+    padding:50px;
 
     border-radius:20px;
 
     box-shadow:
-            0 15px 35px rgba(0,0,0,0.2);
+            0 10px 30px rgba(0,0,0,0.15);
 
     text-align:center;
 }
 
 .logo{
-    width:180px;
+    width:120px;
     margin-bottom:20px;
+    border-radius:12px;
 }
 
 h1{
     color:#5a3ec8;
-    font-size:32px;
+    font-size:34px;
     margin-bottom:10px;
 }
 
 .subtitle{
-    color:#777;
-    margin-bottom:30px;
+    color:#6b7280;
+    margin-bottom:35px;
 }
 
 form{
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:18px;
+}
+
+.input-group{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.input-group svg{
+    position:absolute;
+    left:14px;
+    width:20px;
+    height:20px;
+    stroke:#9ca3af;
+    pointer-events:none;
+}
+
+.input-group input{
+    width:100%;
+    padding-left:44px;
 }
 
 input{
 
-    padding:14px;
+    padding:15px;
 
     border:1px solid #ddd;
 
@@ -80,9 +101,25 @@ input:focus{
     border-color:#5a3ec8;
 }
 
+.input-group:focus-within svg{
+    stroke:#5a3ec8;
+}
+
+.forgot-password{
+    color:#5a3ec8;
+    font-size:14px;
+    text-align:right;
+    margin-top:-8px;
+    cursor:pointer;
+}
+
+.forgot-password:hover{
+    text-decoration:underline;
+}
+
 button{
 
-    padding:15px;
+    padding:16px;
 
     border:none;
 
@@ -92,7 +129,7 @@ button{
 
     color:white;
 
-    font-size:16px;
+    font-size:17px;
 
     font-weight:bold;
 
