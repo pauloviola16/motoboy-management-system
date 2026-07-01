@@ -130,7 +130,7 @@ http://localhost:8080
 <h3>Tela de Login</h3>
 
 <p align="center">
-  <img src="images/LoginConecta.png" alt="Nova Escala" width="70%">
+  <img src="images/loginConecta.png" alt="Nova Escala" width="70%">
 </p>
 
 <h3>Lista de Escalas</h3>
