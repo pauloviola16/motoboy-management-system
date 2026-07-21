@@ -8,17 +8,15 @@
 ![Swagger](https://img.shields.io/badge/Swagger-UI-85EA2D?logo=swagger&logoColor=black)
 
 ## 📌 Sobre o Projeto
-
 Sistema web desenvolvido com **Java e Spring Boot** para gerenciamento de escalas de motoboys.
-
 O projeto foi idealizado a partir de desafios observados em operações logísticas reais, buscando centralizar o controle de escalas, organizar a distribuição de entregadores entre lojas e facilitar a visualização operacional diária.
 
 Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e Bootstrap**, permitindo o gerenciamento das escalas de forma simples e intuitiva.
 
+**Escopo atual:** 3 entidades principais (Motoboys, Lojas e Escalas), com CRUD completo para cada uma via API REST e interface web.
+
 ---
-
 ## 🚀 Tecnologias Utilizadas
-
 - Java 17
 - Spring Boot
 - Spring Web
@@ -34,7 +32,6 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 - Git e GitHub
 
 ---
-
 ## 🧩 Funcionalidades
 
 ### Gestão de Escalas
@@ -56,9 +53,7 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 - Documentação automática com Swagger
 
 ---
-
 ## 🔐 Segurança
-
 - Autenticação com Spring Security
 - Tela de login personalizada
 - Proteção de rotas da aplicação
@@ -66,8 +61,8 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 - Criptografia de senhas com BCrypt
 - Redirecionamento automático para autenticação em áreas protegidas
 
- ## ✅ Boas Práticas Implementadas
-
+---
+## ✅ Boas Práticas Implementadas
 - Arquitetura em camadas (Controller, Service e Repository)
 - DTOs para transferência de dados
 - Bean Validation para validação de entradas
@@ -75,81 +70,78 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 - Documentação automática com Swagger/OpenAPI
 - Separação de responsabilidades seguindo boas práticas do Spring Boot
 
+---
 ## 🏗️ Arquitetura
-
 O projeto segue arquitetura em camadas para facilitar manutenção, escalabilidade e organização do código.
 
-- controller → Recebe e processa as requisições HTTP
-- service → Regras de negócio da aplicação
-- repository → Acesso aos dados com Spring Data JPA
-- dto → Transferência de dados entre camadas
-- model → Entidades do domínio
-- security → Configurações de autenticação e autorização
-- exception → Tratamento global de exceções
+- `controller` → Recebe e processa as requisições HTTP
+- `service` → Regras de negócio da aplicação
+- `repository` → Acesso aos dados com Spring Data JPA
+- `dto` → Transferência de dados entre camadas
+- `model` → Entidades do domínio
+- `security` → Configurações de autenticação e autorização
+- `exception` → Tratamento global de exceções
 
 ---
-
 ## 📖 Documentação da API
-
 Com a aplicação em execução:
-
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
 
 ---
-
 ## ▶️ Executando o Projeto
 
 ### Pré-requisitos
-
 - Java 17+
 - Maven
 - MySQL
 
+### Configuração do banco de dados
+Antes de rodar, configure a conexão no `application.properties` (ou via variáveis de ambiente):
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/motoboy_db
+spring.datasource.username=root
+spring.datasource.password=sua_senha
+```
+
 ### Execução
-
 ```bash
-git clone https://github.com/seuusuario/motoboy-management-system.git
-
+git clone https://github.com/pauloviola16/motoboy-management-system.git
 cd motoboy-management-system
-
 ./mvnw spring-boot:run
 ```
 
 Aplicação disponível em:
-
 ```bash
 http://localhost:8080
 ```
 
 ---
-
 ## 📸 Demonstração do Sistema
 
 <h3>Tela de Login</h3>
-
 <p align="center">
   <img src="images/loginConecta.png" alt="Nova Escala" width="70%">
 </p>
 
 <h3>Lista de Escalas</h3>
-
 <p align="center">
   <img src="images/dashboardATT.png" alt="Lista de Escalas" width="90%">
 </p>
-
 <p align="center">
   <em>Visualização centralizada das escalas cadastradas, permitindo consulta e gerenciamento dos registros.</em>
 </p>
 
+---
+## 🔜 Próximos Passos
+- Cobertura de testes automatizados (JUnit 5 e Mockito)
+- Deploy em ambiente de produção para demonstração ao vivo
 
+---
 ## 📌 Status
-
 Versão 1.1 concluída.
-
 Principais funcionalidades implementadas:
-
 - Gestão de escalas
 - API REST
 - Interface Web com Thymeleaf
@@ -159,5 +151,4 @@ Principais funcionalidades implementadas:
 - Swagger/OpenAPI
 
 ---
-
 Sistema desenvolvido para apoiar a gestão operacional de escalas em operações de entrega, centralizando informações de lojas, motoboys e jornadas de trabalho.
