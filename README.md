@@ -134,21 +134,5 @@ http://localhost:8080
 </p>
 
 ---
-## 🔜 Próximos Passos
-- Cobertura de testes automatizados (JUnit 5 e Mockito)
-- Deploy em ambiente de produção para demonstração ao vivo
 
----
-## 📌 Status
-Versão 1.1 concluída.
-Principais funcionalidades implementadas:
-- Gestão de escalas
-- API REST
-- Interface Web com Thymeleaf
-- Spring Security
-- Bean Validation
-- Tratamento global de exceções
-- Swagger/OpenAPI
-
----
 Sistema desenvolvido para apoiar a gestão operacional de escalas em operações de entrega, centralizando informações de lojas, motoboys e jornadas de trabalho.
