@@ -13,6 +13,8 @@ O projeto foi idealizado a partir de desafios observados em operações logísti
 
 Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e Bootstrap**, permitindo o gerenciamento das escalas de forma simples e intuitiva.
 
+🔗 **Demo ao vivo:** [motoboy-management-system-production.up.railway.app](https://motoboy-management-system-production.up.railway.app) *(ambiente de demonstração pública do projeto)*
+
 **Escopo atual:** 3 entidades principais (Motoboys, Lojas e Escalas), com CRUD completo para cada uma via API REST e interface web.
 
 ---
