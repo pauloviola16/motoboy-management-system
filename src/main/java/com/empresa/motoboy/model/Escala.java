@@ -28,7 +28,7 @@ public class Escala {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     @Schema(description = "Status da escala", example = "CONFIRMADA")
-    private StatusEscala status;
+    private StatusEscala status = StatusEscala.NAO_CONFIRMADA;
 
     @NotNull
     @ManyToOne
