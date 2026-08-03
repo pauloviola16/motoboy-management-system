@@ -42,15 +42,22 @@ public class LojaService {
                 .orElseThrow(() -> new RuntimeException("Loja não encontrada"));
     }
 
-    public Loja atualizar(Long id, Loja lojaAtualizada) {
+    public LojaResponseDTO atualizar(Long id, LojaRequestDTO dto) {
 
         Loja loja = buscarPorId(id);
 
-        loja.setNome(lojaAtualizada.getNome());
-        loja.setEndereco(lojaAtualizada.getEndereco());
-        loja.setValorDiaria(lojaAtualizada.getValorDiaria());
+        loja.setNome(dto.getNome());
+        loja.setEndereco(dto.getEndereco());
+        loja.setValorDiaria(dto.getValorDiaria());
 
-        return lojaRepository.save(loja);
+        Loja lojaAtualizada = lojaRepository.save(loja);
+
+        return new LojaResponseDTO(
+                lojaAtualizada.getId(),
+                lojaAtualizada.getNome(),
+                lojaAtualizada.getEndereco(),
+                lojaAtualizada.getValorDiaria()
+        );
     }
 
     public void deletar(Long id) {

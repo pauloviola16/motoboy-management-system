@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/lojas")
+@RequestMapping("/api/lojas")
 @RequiredArgsConstructor
 public class LojaController {
 
@@ -38,11 +38,11 @@ public class LojaController {
 
     @PutMapping("/{id}")
     @Operation(summary = "Atualizar loja")
-    public Loja atualizar(
+    public LojaResponseDTO atualizar(
             @PathVariable Long id,
-            @RequestBody @Valid Loja loja
+            @RequestBody @Valid LojaRequestDTO dto
     ) {
-        return lojaService.atualizar(id, loja);
+        return lojaService.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
