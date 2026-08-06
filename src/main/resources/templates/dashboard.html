@@ -159,6 +159,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
 
+                        <!-- lado esquerdo: nome + horário -->
                         <div>
 
                             <h5
@@ -166,13 +167,7 @@
                                     th:text="${escala.nomeMotoboy}">
                             </h5>
 
-                            <span
-                                    class="badge"
-                                    th:classappend="${escala.status.name() == 'CANCELADA'} ? ' bg-danger' : ' bg-success'"
-                                    th:text="${escala.status}">
-                            </span>
-
-                            <p class="mb-0 text-muted mt-2">
+                            <p class="mb-0 text-muted mt-1">
 
                                 <span th:text="${escala.horarioInicio}"></span>
 
@@ -184,22 +179,47 @@
 
                         </div>
 
-                        <div class="d-flex gap-2">
+                        <!-- lado direito: status (dropdown) + lixeira -->
+                        <div class="d-flex align-items-center gap-2">
 
-                            <form
-                                    th:if="${escala.status.name() != 'CANCELADA'}"
-                                    th:action="@{'/escalas/' + ${escala.escalaId} + '/cancelar'}"
-                                    method="post">
+                            <div class="dropdown">
 
                                 <button
-                                        type="submit"
-                                        class="btn btn-danger btn-sm">
+                                        class="btn btn-sm dropdown-toggle"
+                                        th:classappend="${escala.status.name() == 'CONFIRMADA'} ? ' btn-primary'
+                                            : (${escala.status.name() == 'PRESENTE'} ? ' btn-success'
+                                            : (${escala.status.name() == 'AUSENTE'} ? ' btn-warning'
+                                            : ' btn-secondary'))"
+                                        type="button"
+                                        data-bs-toggle="dropdown">
 
-                                    Cancelar
+                                    <span th:text="${escala.status}"></span>
 
                                 </button>
 
-                            </form>
+                                <ul class="dropdown-menu">
+
+                                    <li th:each="opcao : ${T(com.empresa.motoboy.model.StatusEscala).values()}">
+
+                                        <form
+                                                th:action="@{'/escalas/' + ${escala.escalaId} + '/status'}"
+                                                method="post">
+
+                                            <input type="hidden" name="status" th:value="${opcao}"/>
+
+                                            <button
+                                                    type="submit"
+                                                    class="dropdown-item"
+                                                    th:text="${opcao}">
+                                            </button>
+
+                                        </form>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
 
                             <form
                                     th:action="@{'/escalas/' + ${escala.escalaId} + '/excluir'}"
@@ -229,6 +249,8 @@
     </main>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
