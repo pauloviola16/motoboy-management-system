@@ -82,16 +82,6 @@ public class DashboardController {
         return "redirect:/";
     }
 
-    @PostMapping("/escalas/{id}/cancelar")
-    public String cancelarEscala(
-            @PathVariable Long id
-    ) {
-
-        escalaService.cancelarEscala(id);
-
-        return "redirect:/";
-    }
-
     @PostMapping("/escalas/{id}/excluir")
     public String excluirEscala(@PathVariable Long id) {
 
