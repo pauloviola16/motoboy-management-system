@@ -13,6 +13,7 @@ import com.empresa.motoboy.model.StatusMotoboy;
 import com.empresa.motoboy.repository.EscalaRepository;
 import com.empresa.motoboy.repository.LojaRepository;
 import com.empresa.motoboy.repository.MotoboyRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -56,14 +57,10 @@ public class EscalaService {
         return escalaRepository.save(escala);
     }
 
-    public void cancelarEscala(Long id) {
-
+    public void atualizarStatus(Long id, StatusEscala novoStatus) {
         Escala escala = escalaRepository.findById(id)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Escala não encontrada"));
-
-        escala.setStatus(StatusEscala.CANCELADA);
-
+                .orElseThrow(() -> new EntityNotFoundException("Escala não encontrada"));
+        escala.setStatus(novoStatus);
         escalaRepository.save(escala);
     }
 

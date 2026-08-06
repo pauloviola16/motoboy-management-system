@@ -3,6 +3,7 @@ package com.empresa.motoboy.controller;
 import com.empresa.motoboy.dto.EscalaRequestDTO;
 import com.empresa.motoboy.dto.LojaDashboardDTO;
 import com.empresa.motoboy.model.Escala;
+import com.empresa.motoboy.model.StatusEscala;
 import com.empresa.motoboy.service.EscalaService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -31,12 +32,10 @@ public class EscalaController {
         return escalaService.criar(dto);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
-    @PatchMapping("/{id}/cancelar")
-    @Operation(summary = "Cancelar escala")
-    public void cancelar(@PathVariable Long id) {
-
-        escalaService.cancelarEscala(id);
+    @PostMapping("/escalas/{id}/status")
+    public String atualizarStatus(@PathVariable Long id, @RequestParam StatusEscala status) {
+        escalaService.atualizarStatus(id, status);
+        return "redirect:/";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
