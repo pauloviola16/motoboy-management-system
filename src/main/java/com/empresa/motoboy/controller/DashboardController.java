@@ -1,6 +1,7 @@
 package com.empresa.motoboy.controller;
 
 import com.empresa.motoboy.dto.EscalaRequestDTO;
+import com.empresa.motoboy.model.StatusEscala;
 import com.empresa.motoboy.repository.LojaRepository;
 import com.empresa.motoboy.repository.MotoboyRepository;
 import com.empresa.motoboy.service.EscalaService;
@@ -87,6 +88,12 @@ public class DashboardController {
 
         escalaService.excluirEscala(id);
 
+        return "redirect:/";
+    }
+
+    @PostMapping("/escalas/{id}/status")
+    public String atualizarStatus(@PathVariable Long id, @RequestParam StatusEscala status) {
+        escalaService.atualizarStatus(id, status);
         return "redirect:/";
     }
 }

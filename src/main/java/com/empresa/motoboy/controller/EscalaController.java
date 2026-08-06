@@ -32,11 +32,6 @@ public class EscalaController {
         return escalaService.criar(dto);
     }
 
-    @PostMapping("/escalas/{id}/status")
-    public String atualizarStatus(@PathVariable Long id, @RequestParam StatusEscala status) {
-        escalaService.atualizarStatus(id, status);
-        return "redirect:/";
-    }
 
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @GetMapping("/dashboard")
