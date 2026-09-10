@@ -7,7 +7,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 ![Swagger](https://img.shields.io/badge/Swagger-UI-85EA2D?logo=swagger&logoColor=black)
 
-## 📌 Sobre o proje
+## 📌 Sobre o projeto
 Sistema web desenvolvido com **Java e Spring Boot** para gerenciamento de escalas de motoboys.
 O projeto foi idealizado a partir de desafios observados em operações logísticas reais, buscando centralizar o controle de escalas, organizar a distribuição de entregadores entre lojas e facilitar a visualização operacional diária.
 
