@@ -21,8 +21,6 @@ Além da API REST, o sistema possui interface web desenvolvida com **Thymeleaf e
 ## 🚀 Tecnologias Utilizadas
 - Java 17
 - Spring Boot
-
-- Spring Data JPA
 - Spring Security
 - Hibernate
 - MySQL
