@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Versão%201.1-brightgreen)
 ![Java](https://img.shields.io/badge/Java-17-orange)
-![Spring Boot](https://img.shields.io/badge/SpringBoot-Framework-brightgreen
+![Spring Boot](https://img.shields.io/badge/SpringBoot-Framework-brightgreen)
 ![Spring Data JPA](https://img.shields.io/badge/Spring%20Data-JPA-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-blue)
 ![Swagger](https://img.shields.io/badge/Swagger-UI-85EA2D?logo=swagger&logoColor=black)
